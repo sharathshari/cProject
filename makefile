@@ -1,5 +1,12 @@
-ABC.exe: main.o  hello.o factorial.o
-	gcc -o ABC.exe main.o hello.o factorial.o
+exec : \
+ compile  
+	echo "Executing the object file"
+	./compile 
+
+compile : main.o hello.o factorial.o
+	echo "Compiling"
+	gcc -o compile $^
+
 
 main.o: main.c
 	gcc -c main.c
